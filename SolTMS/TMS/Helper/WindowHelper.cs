@@ -27,10 +27,10 @@ namespace TMS.Helper
                 // Run task for Opening and Closing window.
                 return Task.Run(() =>
                 {
-                    WindowCloseObj.Dispatcher.InvokeAsync(() =>
+                    WindowCloseObj.Dispatcher.InvokeAsync(async() =>
                     {
                         // Close Window
-                        WindowCloseObj.Close();
+                        await CloseWindowAsync<TWindowClose>(WindowCloseObj);
                       
                         // Open Window
                         WindowOpenObj.ShowDialog();
