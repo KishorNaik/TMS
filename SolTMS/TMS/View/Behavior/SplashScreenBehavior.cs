@@ -51,7 +51,7 @@ namespace TMS.View.Behavior
         private static void OnRunAimaton(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             // Get Storyboard Object
-            Storyboard StoreyBoardObj = d as Storyboard;
+            var StoreyBoardObj = d as Storyboard;
 
             // Check if Storyboard Object is null or Not.
             if (StoreyBoardObj != null)
@@ -63,7 +63,7 @@ namespace TMS.View.Behavior
                     StoreyBoardObj.Completed += async (SenderSb, EventSb) =>
                     {
                         // Get WinSplashScreen Window Object.
-                        WinSplashScreen WinSplashScreenObj = GetWindowOwner(StoreyBoardObj) as WinSplashScreen;
+                        var WinSplashScreenObj = GetWindowOwner(StoreyBoardObj) as WinSplashScreen;
 
                         if (WinSplashScreenObj != null)
                         {

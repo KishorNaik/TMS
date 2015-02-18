@@ -46,6 +46,24 @@ namespace TMS.Helper
             }
         }
 
+        public static Task WindowMinimizedAsync<TWindow>(TWindow WindowObj) where TWindow:Window
+        {
+            try
+            {
+                return Task.Run(() =>
+                {
+                    WindowObj.Dispatcher.InvokeAsync(() =>
+                    {
+                        WindowObj.WindowState = WindowState.Minimized;
+                    },System.Windows.Threading.DispatcherPriority.Normal);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         #endregion
     }
 }
