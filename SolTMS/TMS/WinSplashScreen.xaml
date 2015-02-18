@@ -13,6 +13,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+		FontFamily="Arial"
         mc:Ignorable="d">
     <Window.Resources>
         <Storyboard x:Key="ProgressStoryboard"
@@ -109,13 +110,10 @@
 
                     <TextBlock Grid.Row="1"
                                Grid.Column="0"
-                               Width="378.7"
-                               Height="18.634"
-                               Margin="0,8.183,10,8.183"
                                HorizontalAlignment="Right"
                                VerticalAlignment="Center"
-                               FontFamily="Engravers MT"
-                               FontSize="16"
+								Margin="10,0"
+                               FontSize="26"
                                Foreground="White"
                                Text="Transport Management System" />
                     <TextBlock Grid.Row="2"
@@ -123,8 +121,7 @@
                                Margin="10,0"
                                HorizontalAlignment="Right"
                                VerticalAlignment="Center"
-                               FontFamily="Engravers MT"
-                               FontSize="11"
+                               FontSize="14"
                                Foreground="White"
                                Text="Version 1.0" />
 
@@ -221,8 +218,7 @@
                                Margin="10,0"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
-                               FontFamily="Engravers MT"
-                               FontSize="10"
+                               FontSize="14"
                                Foreground="White"
                                Text="Developed By : Kishor Naik" />
 
