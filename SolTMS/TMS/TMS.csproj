@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\WindowHelper.cs" />
+    <Compile Include="View\Behavior\SplashScreenBehavior.cs" />
     <Compile Include="WinSplashScreen.xaml.cs">
       <DependentUpon>WinSplashScreen.xaml</DependentUpon>
     </Compile>
@@ -110,7 +112,6 @@
     <Folder Include="ViewModel\Command\" />
     <Folder Include="ViewModel\Concrete\" />
     <Folder Include="ViewModel\Factory\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
