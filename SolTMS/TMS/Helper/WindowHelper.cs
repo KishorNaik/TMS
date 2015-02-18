@@ -46,6 +46,12 @@ namespace TMS.Helper
             }
         }
 
+        /// <summary>
+        /// Minimized the window.
+        /// </summary>
+        /// <typeparam name="TWindow">Specify the type of Window</typeparam>
+        /// <param name="WindowObj">Specify the Window object</param>
+        /// <returns>Task</returns>
         public static Task WindowMinimizedAsync<TWindow>(TWindow WindowObj) where TWindow:Window
         {
             try
@@ -54,8 +60,29 @@ namespace TMS.Helper
                 {
                     WindowObj.Dispatcher.InvokeAsync(() =>
                     {
-                        WindowObj.WindowState = WindowState.Minimized;
-                    },System.Windows.Threading.DispatcherPriority.Normal);
+                          WindowObj.WindowState = WindowState.Minimized;
+                    },System.Windows.Threading.DispatcherPriority.Background);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Close Window
+        /// </summary>
+        /// <typeparam name="TWindow">Specify the type of Window</typeparam>
+        /// <param name="WindowObj">Specify the Window object</param>
+        /// <returns>Task</returns>
+        public static Task CloseWindowAsync<TWindow>(TWindow WindowObj) where TWindow : Window
+        {
+            try
+            {
+                return Task.Run(() =>
+                {
+                    WindowObj.Dispatcher.InvokeAsync(() => { WindowObj.Close(); }, System.Windows.Threading.DispatcherPriority.Normal);
                 });
             }
             catch (Exception)

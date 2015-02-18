@@ -9,29 +9,29 @@ using TMS.Helper;
 
 namespace TMS.View.Behavior
 {
-    public static class MinimizeWindowBehavior
+    public static class CloseWindowBehavior
     {
         #region Dependency Property Declaration
         // Declare the IsMinimize Property.
-        public static DependencyProperty IsMinimizeProperty = DependencyProperty.RegisterAttached("IsMinimize",
-            typeof (Boolean), typeof (MinimizeWindowBehavior), new PropertyMetadata(false, OnMinimizeWindow));
+        public static DependencyProperty IsCloseProperty = DependencyProperty.RegisterAttached("IsClose",
+            typeof (Boolean), typeof (CloseWindowBehavior), new PropertyMetadata(false, OnCloseWindow));
 
 
         // Declare the Owner of the Window Property.
         public static readonly DependencyProperty WindowOwnerProperty =
-            DependencyProperty.RegisterAttached("WindowOwner", typeof(Object), typeof(MinimizeWindowBehavior), new PropertyMetadata((Object)null));
+            DependencyProperty.RegisterAttached("WindowOwner", typeof(Object), typeof(CloseWindowBehavior), new PropertyMetadata((Object)null));
         #endregion
 
         #region Get and Set of Dependency Property
 
-        public static Boolean GetIsMinimize(DependencyObject DoObj)
+        public static Boolean GetIsClose(DependencyObject DoObj)
         {
-            return (Boolean) DoObj.GetValue(IsMinimizeProperty);
+            return (Boolean) DoObj.GetValue(IsCloseProperty);
         }
 
-        public static void SetIsMinimize(DependencyObject DoObj, Boolean Value)
+        public static void SetIsClose(DependencyObject DoObj, Boolean Value)
         {
-            DoObj.SetValue(IsMinimizeProperty, Value);
+            DoObj.SetValue(IsCloseProperty, Value);
         }
 
         public static Object GetWindowOwner(DependencyObject DoObj)
@@ -46,7 +46,7 @@ namespace TMS.View.Behavior
 
         #endregion
 
-        private static void OnMinimizeWindow(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnCloseWindow(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace TMS.View.Behavior
                 if (ImageObj != null)
                 {
                     // If dependency property value is true then wire up Image Mouse down event.
-                    if ((Boolean) e.NewValue)
+                    if ((Boolean)e.NewValue)
                     {
                         // wire up the image mouse down event.
                         ImageObj.MouseDown += async (SenderImg, EventImg) =>
@@ -69,8 +69,8 @@ namespace TMS.View.Behavior
 
                                 if (MainWindowObj != null)
                                 {
-                                    // Minimized window.
-                                    await WindowHelper.WindowMinimizedAsync<MainWindow>(MainWindowObj);
+                                    // Close window.
+                                    await WindowHelper.CloseWindowAsync<MainWindow>(MainWindowObj);
                                 }
                             }
                         };
