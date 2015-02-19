@@ -4,7 +4,7 @@
         xmlns:BehaviorNS="clr-namespace:TMS.View.Behavior"
         x:Name="Window"
         Title="MainWindow"
-        Width="1200"
+        Width="1024"
         Height="680"
         AllowsTransparency="True"
         FontFamily="Arial"
@@ -38,6 +38,18 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="ChildUserControlStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ChildUserControl" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1220" />
+                <EasingDoubleKeyFrame FrameworkElement.FlowDirection="RightToLeft"
+                                      KeyTime="0:0:0.5"
+                                      Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseIn" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
     </Window.Resources>
     <Window.Triggers>
@@ -54,11 +66,15 @@
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="imgClose">
             <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveClose}" />
         </EventTrigger>
+
+        <!--<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ChildUserControlStoryboard}" />
+        </EventTrigger>-->
     </Window.Triggers>
 
     <Viewbox Stretch="Fill">
         <Grid x:Name="ParentLayoutRoot"
-              Width="1200"
+              Width="1024"
               Height="680">
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*" />
@@ -131,7 +147,23 @@
             <Grid x:Name="ChildLayoutRoot"
                   Grid.Row="2"
                   Grid.Column="0"
-                  Background="#FF2E2E2E" />
+                  Background="#FF2E2E2E">
+                <Grid x:Name="ChildUserControl"
+                      Grid.Row="0"
+                      Grid.Column="0"
+                      Background="Transparent"
+                      RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform X="1220" />
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+
+                </Grid>
+            </Grid>
 
         </Grid>
     </Viewbox>

@@ -8,20 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TMS
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for UCTransport.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class UCTransport : UserControl
 	{
-		public MainWindow()
+		public UCTransport()
 		{
 			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
 		}
 	}
 }

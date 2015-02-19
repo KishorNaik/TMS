@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace TMS.Helper
 {
@@ -12,7 +13,7 @@ namespace TMS.Helper
         #region Static Methods
 
         /// <summary>
-        /// Open and Close Window
+        /// Open and Close Window Asynchronously 
         /// </summary>
         /// <typeparam name="TWindowOpen">Specify the type of Open Window</typeparam>
         /// <typeparam name="TWindowClose">Specify the type of Close Window</typeparam>
@@ -25,9 +26,9 @@ namespace TMS.Helper
             try
             {
                 // Run task for Opening and Closing window.
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    WindowCloseObj.Dispatcher.InvokeAsync(async() =>
+                    await WindowCloseObj.Dispatcher.InvokeAsync(async() =>
                     {
                         // Close Window
                         await CloseWindowAsync<TWindowClose>(WindowCloseObj);
@@ -47,7 +48,7 @@ namespace TMS.Helper
         }
 
         /// <summary>
-        /// Minimized the window.
+        /// Minimized the window Asynchronously.
         /// </summary>
         /// <typeparam name="TWindow">Specify the type of Window</typeparam>
         /// <param name="WindowObj">Specify the Window object</param>
@@ -56,9 +57,9 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    WindowObj.Dispatcher.InvokeAsync(() =>
+                    await WindowObj.Dispatcher.InvokeAsync(() =>
                     {
                           WindowObj.WindowState = WindowState.Minimized;
                     },System.Windows.Threading.DispatcherPriority.Background);
@@ -71,7 +72,7 @@ namespace TMS.Helper
         }
 
         /// <summary>
-        /// Close Window
+        /// Close Window Asynchronously
         /// </summary>
         /// <typeparam name="TWindow">Specify the type of Window</typeparam>
         /// <param name="WindowObj">Specify the Window object</param>
@@ -80,9 +81,85 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    WindowObj.Dispatcher.InvokeAsync(() => { WindowObj.Close(); }, System.Windows.Threading.DispatcherPriority.Normal);
+                   await WindowObj.Dispatcher.InvokeAsync(() => { WindowObj.Close(); }, System.Windows.Threading.DispatcherPriority.Normal);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Load User control in window Asynchronously.
+        /// </summary>
+        /// <typeparam name="TWindow">Specify the type of window</typeparam>
+        /// <typeparam name="TUserControl">Specify the type of the user control</typeparam>
+        /// <param name="WindowObj">specify the window object</param>
+        /// <param name="UserControlObj">specify the user control object</param>
+        /// <returns>Task</returns>
+        public static Task LoadUserControlAsync<TWindow, TUserControl>(TWindow WindowObj, TUserControl UserControlObj)
+        {
+            try
+            {
+                return Task.Run(async() =>
+                {
+                    // Get Main Window Object.
+                     dynamic DynamicMainWindowObj = WindowObj;
+               
+                    // Get specified user control object.
+                     dynamic DynamicUserControlObj = UserControlObj;
+
+                    // Check if both object is null or not.
+                    if (DynamicMainWindowObj != null && DynamicUserControlObj != null)
+                    {
+
+                       await DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        {
+                            // Clear the grid before loading user control.
+                            DynamicMainWindowObj.ChildUserControl.Children.Clear();
+                            //add user control in grid.
+                            DynamicMainWindowObj.ChildUserControl.Children.Add(DynamicUserControlObj);
+                        }),System.Windows.Threading.DispatcherPriority.Normal);
+                    }
+                });
+               
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        ///  Run the animation Asynchronously.
+        /// </summary>
+        /// <typeparam name="TWindow">Specify the type of window</typeparam>
+        /// <param name="WindowObj">Specify the Window Object</param>
+        /// <param name="AnimationStoreyboardResourceName">Specify the name of animation storyboard resource</param>
+        /// <returns>Task</returns>
+        public static Task RunAnimation<TWindow>(TWindow WindowObj, String AnimationStoreyboardResourceName)
+        {
+            try
+            {
+                return Task.Run(async() =>
+                {
+                    // Get Main Window Object.
+                    dynamic DynamicMainWindowObj = WindowObj;
+
+                    // Check the object is null or not
+                    if (DynamicMainWindowObj != null)
+                    {
+                        await DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        {
+                            // get animation storyboard resource and run the animation Asynchronously in background.
+                           var StoreyBoardobj= DynamicMainWindowObj.Resources[AnimationStoreyboardResourceName] as Storyboard;
+                            // Initiated storyboard
+                            StoreyBoardobj.Begin();
+                        }), System.Windows.Threading.DispatcherPriority.Background);
+                    }
                 });
             }
             catch (Exception)

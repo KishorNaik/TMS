@@ -61,6 +61,9 @@
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
     <Compile Include="View\Behavior\SplashScreenBehavior.cs" />
+    <Compile Include="View\UCTransport.xaml.cs">
+      <DependentUpon>UCTransport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinSplashScreen.xaml.cs">
       <DependentUpon>WinSplashScreen.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ProResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UCTransport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
