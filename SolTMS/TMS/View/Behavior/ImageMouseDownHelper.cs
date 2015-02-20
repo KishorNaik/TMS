@@ -32,8 +32,9 @@ namespace TMS.View.Behavior
 
                             if (MainWindowObj != null)
                             {
-                                // Close window.
+                                // Action which specified by user.
                                 ActionWindowObj(MainWindowObj);
+
                             }
                         }
                     };
