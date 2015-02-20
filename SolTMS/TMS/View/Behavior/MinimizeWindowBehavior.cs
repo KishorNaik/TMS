@@ -50,32 +50,36 @@ namespace TMS.View.Behavior
         {
             try
             {
-                // Get Image Object.
-                var ImageObj = d as Image;
+                //// Get Image Object.
+                //var ImageObj = d as Image;
 
-                if (ImageObj != null)
-                {
-                    // If dependency property value is true then wire up Image Mouse down event.
-                    if ((Boolean) e.NewValue)
-                    {
-                        // wire up the image mouse down event.
-                        ImageObj.MouseDown += async (SenderImg, EventImg) =>
-                        {
-                            // set the current state of the left mouse button is Pressed.
-                            if (EventImg.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
-                            {
-                                // get MainWindow Object.
-                                var MainWindowObj = GetWindowOwner(ImageObj) as MainWindow;
+                //if (ImageObj != null)
+                //{
+                //    // If dependency property value is true then wire up Image Mouse down event.
+                //    if ((Boolean) e.NewValue)
+                //    {
+                //        // wire up the image mouse down event.
+                //        ImageObj.MouseDown += async (SenderImg, EventImg) =>
+                //        {
+                //            // set the current state of the left mouse button is Pressed.
+                //            if (EventImg.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+                //            {
+                //                // get MainWindow Object.
+                //                var MainWindowObj = GetWindowOwner(ImageObj) as MainWindow;
 
-                                if (MainWindowObj != null)
-                                {
-                                    // Minimized window.
-                                    await WindowHelper.WindowMinimizedAsync<MainWindow>(MainWindowObj);
-                                }
-                            }
-                        };
-                    }
-                }
+                //                if (MainWindowObj != null)
+                //                {
+                //                    // Minimized window.
+                //                    await WindowHelper.WindowMinimizedAsync<MainWindow>(MainWindowObj);
+                //                }
+                //            }
+                //        };
+                //    }
+                //}
+
+                
+                ImageMouseDownHelper.ImageMouseDown(d, e, GetWindowOwnerPara => GetWindowOwner(GetWindowOwnerPara), 
+                    async MainWindowPara => await WindowHelper.WindowMinimizedAsync<Window>(MainWindowPara));
             }
             catch (Exception)
             {

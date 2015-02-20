@@ -60,6 +60,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
+    <Compile Include="View\Behavior\ImageMouseDownHelper.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
     <Compile Include="View\Behavior\SplashScreenBehavior.cs" />
     <Compile Include="View\UCTransport.xaml.cs">
