@@ -26,9 +26,9 @@ namespace TMS.Helper
             try
             {
                 // Run task for Opening and Closing window.
-                return Task.Run(async() =>
+                return Task.Run(() =>
                 {
-                    await WindowCloseObj.Dispatcher.InvokeAsync(async() =>
+                    DispatcherHelper.DispatcherAsync(async() =>
                     {
                         // Close Window
                         await CloseWindowAsync<TWindowClose>(WindowCloseObj);
@@ -37,7 +37,7 @@ namespace TMS.Helper
                         WindowOpenObj.ShowDialog();
 
                        
-                    },System.Windows.Threading.DispatcherPriority.Normal);
+                    });
                     
                 });
             }
@@ -57,12 +57,12 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(async() =>
+                return Task.Run(() =>
                 {
-                    await WindowObj.Dispatcher.InvokeAsync(() =>
+                    DispatcherHelper.DispatcherAsync(() =>
                     {
                           WindowObj.WindowState = WindowState.Minimized;
-                    },System.Windows.Threading.DispatcherPriority.Background);
+                    });
                 });
             }
             catch (Exception)
@@ -81,9 +81,9 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(async() =>
+                return Task.Run(() =>
                 {
-                   await WindowObj.Dispatcher.InvokeAsync(() => { WindowObj.Close(); }, System.Windows.Threading.DispatcherPriority.Normal);
+                    DispatcherHelper.DispatcherAsync(WindowObj.Close);
                 });
             }
             catch (Exception)
@@ -104,7 +104,7 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(async() =>
+                return Task.Run(() =>
                 {
                     // Get Main Window Object.
                      dynamic DynamicMainWindowObj = WindowObj;
@@ -116,13 +116,21 @@ namespace TMS.Helper
                     if (DynamicMainWindowObj != null && DynamicUserControlObj != null)
                     {
 
-                       await DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        //DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        // {
+                        //     // Clear the grid before loading user control.
+                        //     DynamicMainWindowObj.ChildUserControl.Children.Clear();
+                        //     //add user control in grid.
+                        //     DynamicMainWindowObj.ChildUserControl.Children.Add(DynamicUserControlObj);
+                        // }), System.Windows.Threading.DispatcherPriority.Normal);
+
+                        DispatcherHelper.DispatcherAsync(() =>
                         {
                             // Clear the grid before loading user control.
                             DynamicMainWindowObj.ChildUserControl.Children.Clear();
                             //add user control in grid.
                             DynamicMainWindowObj.ChildUserControl.Children.Add(DynamicUserControlObj);
-                        }),System.Windows.Threading.DispatcherPriority.Normal);
+                        });
                     }
                 });
                
@@ -144,7 +152,7 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(async() =>
+                return Task.Run(() =>
                 {
                     // Get Main Window Object.
                     dynamic DynamicMainWindowObj = WindowObj;
@@ -152,13 +160,21 @@ namespace TMS.Helper
                     // Check the object is null or not
                     if (DynamicMainWindowObj != null)
                     {
-                        await DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        //DynamicMainWindowObj.Dispatcher.InvokeAsync(new Action(() =>
+                        //{
+                        //    // get animation storyboard resource and run the animation Asynchronously in background.
+                        //   var StoreyBoardobj= DynamicMainWindowObj.Resources[AnimationStoreyboardResourceName] as Storyboard;
+                        //    // Initiated storyboard
+                        //    StoreyBoardobj.Begin();
+                        //}), System.Windows.Threading.DispatcherPriority.Background);
+
+                        DispatcherHelper.DispatcherAsync(() =>
                         {
                             // get animation storyboard resource and run the animation Asynchronously in background.
-                           var StoreyBoardobj= DynamicMainWindowObj.Resources[AnimationStoreyboardResourceName] as Storyboard;
+                            var StoreyBoardobj = DynamicMainWindowObj.Resources[AnimationStoreyboardResourceName] as Storyboard;
                             // Initiated storyboard
                             StoreyBoardobj.Begin();
-                        }), System.Windows.Threading.DispatcherPriority.Background);
+                        });
                     }
                 });
             }
