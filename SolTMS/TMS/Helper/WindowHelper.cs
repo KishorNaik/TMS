@@ -148,7 +148,7 @@ namespace TMS.Helper
         /// <param name="WindowObj">Specify the Window Object</param>
         /// <param name="AnimationStoreyboardResourceName">Specify the name of animation storyboard resource</param>
         /// <returns>Task</returns>
-        public static Task RunAnimation<TWindow>(TWindow WindowObj, String AnimationStoreyboardResourceName)
+        public static Task RunAnimationAsync<TWindow>(TWindow WindowObj, String AnimationStoreyboardResourceName)
         {
             try
             {

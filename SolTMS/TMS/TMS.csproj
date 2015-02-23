@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,10 +60,20 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Command\RelayCommand.cs" />
+    <Compile Include="ViewModel\Concrete\MainWindowConcrete.cs" />
+    <Compile Include="ViewModel\Factory\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="PropertyChanged\PropertyChangedBase.cs" />
+    <Compile Include="ViewModel\ViewModelInterface\IMainWindow.cs" />
+    <Compile Include="ViewModel\ViewModelInterface\Process\ILoadUserControl.cs" />
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
     <Compile Include="View\Behavior\ImageMouseDownHelper.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
     <Compile Include="View\Behavior\SplashScreenBehavior.cs" />
+    <Compile Include="View\Menu\UCMenu.xaml.cs">
+      <DependentUpon>UCMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinSplashScreen.xaml.cs">
       <DependentUpon>WinSplashScreen.xaml</DependentUpon>
     </Compile>
@@ -75,6 +86,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ProResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Menu\UCMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -112,9 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\Command\" />
-    <Folder Include="ViewModel\Concrete\" />
-    <Folder Include="ViewModel\Factory\" />
+    <Folder Include="View\Converter\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

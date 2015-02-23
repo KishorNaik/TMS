@@ -13,5 +13,37 @@
 		<Setter Property="StrokeThickness" Value="3"/>
 		
 	</Style>
+	<Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Height="150" Width="150">
+						<Border Padding="5" Background="Orange">
+							<TextBlock Text="{TemplateBinding Tag}" Foreground="White" FontFamily="Arial" FontSize="150" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+						</Border>
+						  <StackPanel VerticalAlignment="Bottom" Background="Black" Opacity="0.70" Width="150" Height="60">
+								<TextBlock Text="{TemplateBinding Content}" Foreground="Orange" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Arial" FontSize="16">
+									<TextBlock.RenderTransform>
+										<TransformGroup>
+											<ScaleTransform/>
+											<SkewTransform/>
+											<RotateTransform/>
+											<TranslateTransform Y="35" X="40"/>
+										</TransformGroup>
+									</TextBlock.RenderTransform>
+								</TextBlock>
+						 </StackPanel>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsDefaulted" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsPressed" Value="True"/>
+						<Trigger Property="IsEnabled" Value="False"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 	<!-- Resource dictionary entries should be defined here. -->
 </ResourceDictionary>

@@ -2,6 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:BehaviorNS="clr-namespace:TMS.View.Behavior"
+        xmlns:ViewModelNS="clr-namespace:TMS.ViewModel"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:TMS"
         x:Name="Window"
         Title="MainWindow"
         Width="1024"
@@ -12,6 +15,8 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Window.Resources>
+
+        <ViewModelNS:MainWindowViewModel x:Key="MainWindowViewModelKey" />
 
         <Storyboard x:Key="OnMouseEnterMinimize">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgMinimize" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
@@ -68,14 +73,22 @@
         </EventTrigger>
 
         <!--<EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource ChildUserControlStoryboard}" />
-        </EventTrigger>-->
+			<BeginStoryboard Storyboard="{StaticResource ChildUserControlStoryboard}" />
+		</EventTrigger>-->
     </Window.Triggers>
 
     <Viewbox Stretch="Fill">
         <Grid x:Name="ParentLayoutRoot"
               Width="1024"
-              Height="680">
+              Height="680"
+              DataContext="{Binding Source={StaticResource MainWindowViewModelKey}}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger>
+                    <i:InvokeCommandAction Command="{Binding LoadMenuCommand, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*" />
                 <RowDefinition Height="120*" />
@@ -92,6 +105,8 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
+
+
                 <TextBlock Grid.Row="0"
                            Grid.Column="0"
                            Margin="10,0"
@@ -105,8 +120,8 @@
                        Grid.Column="1"
                        Margin="5"
                        BehaviorNS:MinimizeWindowBehavior.IsMinimize="True"
-                       BehaviorNS:MinimizeWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
-                                                                                                              AncestorType=Window}}"
+                       BehaviorNS:MinimizeWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window},
+                                                                                                              Mode=FindAncestor}}"
                        RenderTransformOrigin="0.5,0.5"
                        Source="Minimize.png"
                        Stretch="Fill">
@@ -124,8 +139,8 @@
                        Grid.Column="2"
                        Margin="5"
                        BehaviorNS:CloseWindowBehavior.IsClose="True"
-                       BehaviorNS:CloseWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
-                                                                                                           AncestorType=Window}}"
+                       BehaviorNS:CloseWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window},
+                                                                                                           Mode=FindAncestor}}"
                        RenderTransformOrigin="0.5,0.5"
                        Source="Close.png"
                        Stretch="Fill">
@@ -144,11 +159,12 @@
                   Grid.Row="1"
                   Grid.Column="0"
                   Background="#FF2E2E2E">
+				
                 <Grid x:Name="ChildUserControl"
                       Grid.Row="0"
                       Grid.Column="0"
                       Background="Transparent"
-                      RenderTransformOrigin="0.5,0.5">
+                      RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform />
@@ -163,5 +179,7 @@
 
         </Grid>
     </Viewbox>
+
+
 
 </Window>

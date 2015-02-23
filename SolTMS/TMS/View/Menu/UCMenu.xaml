@@ -1,0 +1,30 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="TMS.UCMenu"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="400">
+
+	<Grid x:Name="ParentLayoutRoot" Width="640" Height="400">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Grid x:Name="MenuGrid" Grid.Row="0" Grid.Column="0">
+			<UniformGrid Grid.Row="0" Grid.Column="0" Rows="2" Columns="2" Height="350">
+				
+				<Button Content="Create" Tag="C" Style="{StaticResource MenuButtonStyle}"/>
+				<Button Content="Search" Tag="S" Style="{StaticResource MenuButtonStyle}"/>
+				<Button Content="Stats" Tag="S" Style="{StaticResource MenuButtonStyle}"/>
+				<Button Content="Report" Tag="R" Style="{StaticResource MenuButtonStyle}"/>
+				
+			</UniformGrid>
+		</Grid>
+		
+		<Grid x:Name="SubMenuGrid" Grid.Row="0" Grid.Column="1"></Grid>
+	</Grid>
+</UserControl>
