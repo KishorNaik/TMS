@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMS.ViewModel.ViewModelInterface.Process
+namespace TMS.ViewModel.ConcreteInterface.Process
 {
     public interface ILoadUserControl
     {
-        Task LoadUserControlAsync<TWindow>(TWindow WindowObj);
+        Task LoadUserControlAsync<TContent>(TContent ContentObj);
     }
 }

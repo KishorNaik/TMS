@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMS.Helper;
-using TMS.ViewModel.ViewModelInterface;
-using TMS.ViewModel.ViewModelInterface.Process;
+using TMS.ViewModel.ConcreteInterface;
+using TMS.ViewModel.ConcreteInterface.Process;
 
 namespace TMS.ViewModel.Concrete
 {
@@ -16,14 +16,14 @@ namespace TMS.ViewModel.Concrete
         ///  Load by default Menu User Control in Main window
         /// </summary>
         /// <typeparam name="TWindow">Specify the type of Window</typeparam>
-        /// <param name="WindowObj">Specify the Main Window Object</param>
+        /// <param name="ContentObj">Specify the Main Window Object</param>
         /// <returns></returns>
-        public async Task LoadUserControlAsync<TWindow>(TWindow WindowObj)
+        public async Task LoadUserControlAsync<TContent>(TContent ContentObj)
         {
             try
             {
                 // get Main Window Object.
-                var MainWindowObj = WindowObj as MainWindow;
+                var MainWindowObj = ContentObj as MainWindow;
 
                 // Run Animation.
                 await WindowHelper.RunAnimationAsync<MainWindow>(MainWindowObj, "ChildUserControlStoryboard");

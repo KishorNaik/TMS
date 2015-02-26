@@ -95,22 +95,22 @@ namespace TMS.Helper
         /// <summary>
         /// Load User control in window Asynchronously.
         /// </summary>
-        /// <typeparam name="TWindow">Specify the type of window</typeparam>
-        /// <typeparam name="TUserControl">Specify the type of the user control</typeparam>
-        /// <param name="WindowObj">specify the window object</param>
-        /// <param name="UserControlObj">specify the user control object</param>
+        /// <typeparam name="TParentContent">Specify the type of window</typeparam>
+        /// <typeparam name="TChildContent">Specify the type of the user control</typeparam>
+        /// <param name="ParentContentObj">specify the window object</param>
+        /// <param name="ChildContentObj">specify the user control object</param>
         /// <returns>Task</returns>
-        public static Task LoadUserControlAsync<TWindow, TUserControl>(TWindow WindowObj, TUserControl UserControlObj)
+        public static Task LoadUserControlAsync<TParentContent, TChildContent>(TParentContent ParentContentObj, TChildContent ChildContentObj)
         {
             try
             {
                 return Task.Run(() =>
                 {
                     // Get Main Window Object.
-                     dynamic DynamicMainWindowObj = WindowObj;
+                     dynamic DynamicMainWindowObj = ParentContentObj;
                
                     // Get specified user control object.
-                     dynamic DynamicUserControlObj = UserControlObj;
+                     dynamic DynamicUserControlObj = ChildContentObj;
 
                     // Check if both object is null or not.
                     if (DynamicMainWindowObj != null && DynamicUserControlObj != null)
@@ -141,21 +141,22 @@ namespace TMS.Helper
             }
         }
 
+
         /// <summary>
         ///  Run the animation Asynchronously.
         /// </summary>
-        /// <typeparam name="TWindow">Specify the type of window</typeparam>
-        /// <param name="WindowObj">Specify the Window Object</param>
+        /// <typeparam name="TContent">Specify the type of window</typeparam>
+        /// <param name="ContentObj">Specify the Window Object</param>
         /// <param name="AnimationStoreyboardResourceName">Specify the name of animation storyboard resource</param>
         /// <returns>Task</returns>
-        public static Task RunAnimationAsync<TWindow>(TWindow WindowObj, String AnimationStoreyboardResourceName)
+        public static Task RunAnimationAsync<TContent>(TContent ContentObj, String AnimationStoreyboardResourceName)
         {
             try
             {
                 return Task.Run(() =>
                 {
                     // Get Main Window Object.
-                    dynamic DynamicMainWindowObj = WindowObj;
+                    dynamic DynamicMainWindowObj = ContentObj;
 
                     // Check the object is null or not
                     if (DynamicMainWindowObj != null)

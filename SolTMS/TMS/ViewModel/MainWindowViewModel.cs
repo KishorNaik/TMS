@@ -7,12 +7,12 @@ using System.Windows.Input;
 using TMS.Helper;
 using TMS.ViewModel.Command;
 using TMS.ViewModel.Factory;
-using TMS.ViewModel.ViewModelInterface;
-using TMS.ViewModel.ViewModelInterface.Process;
+using TMS.ViewModel.ConcreteInterface;
+using TMS.ViewModel.ConcreteInterface.Process;
 
 namespace TMS.ViewModel
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : IMainWindow
     {
         #region Select Factory
 
@@ -43,7 +43,7 @@ namespace TMS.ViewModel
             get
             {
                 return _LoadMenuCommand ??
-                       (_LoadMenuCommand = new RelayCommand(Param => DispatcherHelper.DispatcherAsync(
+                       (_LoadMenuCommand = new RelayCommand(async Param => await DispatcherHelper.DispatcherAsync(
                            async () =>
                            {
                                // Get Main Window Object from Command Parameter.

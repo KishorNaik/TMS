@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TMS.ViewModel.ViewModelInterface;
-using TMS.ViewModel.ViewModelInterface.Process;
+using System.Windows.Input;
+using TMS.ViewModel.ConcreteInterface;
+using TMS.ViewModel.ConcreteInterface.Process;
 
-namespace TMS.ViewModel.ViewModelInterface
+namespace TMS.ViewModel.ConcreteInterface
 {
-    public interface IMainWindow : ILoadUserControl
+    public interface IMainWindow
     {
-
+        ICommand LoadMenuCommand { get; }
     }
 }
