@@ -61,24 +61,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Command\RelayCommand.cs" />
-    <Compile Include="ViewModel\ConcreteInterface\ILoadSubMenu.cs" />
-    <Compile Include="ViewModel\Concrete\MainWindowConcrete.cs" />
-    <Compile Include="ViewModel\Concrete\MenuConcrete.cs" />
+    <Compile Include="ViewModel\CreateSubMenuViewModel.cs" />
     <Compile Include="ViewModel\Factory\ViewModelFactory.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="PropertyChanged\PropertyChangedBase.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelInterface\IContentView.cs" />
     <Compile Include="ViewModel\ViewModelInterface\IMainWindow.cs" />
-    <Compile Include="ViewModel\ConcreteInterface\Process\ILoadUserControl.cs" />
     <Compile Include="ViewModel\ViewModelInterface\IMenu.cs" />
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
     <Compile Include="View\Behavior\ImageMouseDownHelper.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
     <Compile Include="View\Behavior\SplashScreenBehavior.cs" />
-    <Compile Include="View\Menu\UCMenu.xaml.cs">
+    <Compile Include="View\MenuUC\UCMenu.xaml.cs">
       <DependentUpon>UCMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Menu\UCSubMenuCreate.xaml.cs">
+    <Compile Include="View\MenuUC\UCSubMenuCreate.xaml.cs">
       <DependentUpon>UCSubMenuCreate.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinSplashScreen.xaml.cs">
@@ -96,11 +94,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Menu\UCMenu.xaml">
+    <Page Include="View\MenuUC\UCMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Menu\UCSubMenuCreate.xaml">
+    <Page Include="View\MenuUC\UCSubMenuCreate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -138,6 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="ViewModel\ConcreteInterface\Process\" />
+    <Folder Include="ViewModel\Concrete\" />
     <Folder Include="View\Converter\" />
   </ItemGroup>
   <ItemGroup>

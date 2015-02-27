@@ -8,24 +8,36 @@ using TMS.Helper;
 using TMS.ViewModel.Command;
 using TMS.ViewModel.Factory;
 using TMS.ViewModel.ConcreteInterface;
-using TMS.ViewModel.ConcreteInterface.Process;
+using TMS.PropertyChanged;
 
 namespace TMS.ViewModel
 {
-    public class MainWindowViewModel : IMainWindow
+    public class MainWindowViewModel :PropertyChangedBase, IMainWindow
     {
-        #region Select Factory
-
-        private ILoadUserControl ILoadUserControlObj =
-            ViewModelFactory.ExecuteFactory<ILoadUserControl>(
-                ViewModelFactory.ViewModelSelector.MainWindowViewModel);
-
-        #endregion
-
+        
         #region Constructor
 
         public MainWindowViewModel()
         {
+        }
+
+        #endregion
+
+        #region Property
+
+        private Object _CurrentView;
+
+        /// <summary>
+        ///  Bind Menu user Control in Content Control
+        /// </summary>
+        public Object CurrentView
+        {
+            get { return _CurrentView; }
+            set
+            {
+                _CurrentView = value;
+                OnPropertyChanged("CurrentView");
+            }
         }
 
         #endregion
@@ -35,7 +47,7 @@ namespace TMS.ViewModel
         private ICommand _LoadMenuCommand;
 
         /// <summary>
-        /// Load Menu Control be default.
+        /// Load Menu User Control in Main Window by default.
         /// On Window Load Event Load Menu Control.
         /// </summary>
         public ICommand LoadMenuCommand
@@ -44,13 +56,10 @@ namespace TMS.ViewModel
             {
                 return _LoadMenuCommand ??
                        (_LoadMenuCommand = new RelayCommand(async Param => await DispatcherHelper.DispatcherAsync(
-                           async () =>
+                          () =>
                            {
-                               // Get Main Window Object from Command Parameter.
-                               var MainWindowObj = Param as MainWindow;
-
-                               // Call Load user Control Method to Load Menu User Control by default.
-                               await ILoadUserControlObj.LoadUserControlAsync<MainWindow>(MainWindowObj);
+                               // Create a instance MenuViewModel to load Menu User Control in Main window.
+                               CurrentView = new MenuViewModel();
                            })));
             }
         }

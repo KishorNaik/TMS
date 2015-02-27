@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMS.ViewModel.PropertyChanged
+namespace TMS.PropertyChanged
 {
     public class PropertyChangedBase:INotifyPropertyChanged
     {

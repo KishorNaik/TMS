@@ -26,9 +26,9 @@ namespace TMS.Helper
             try
             {
                 // Run task for Opening and Closing window.
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    DispatcherHelper.DispatcherAsync(async() =>
+                    await DispatcherHelper.DispatcherAsync(async() =>
                     {
                         // Close Window
                         await CloseWindowAsync<TWindowClose>(WindowCloseObj);
@@ -57,9 +57,9 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    DispatcherHelper.DispatcherAsync(() =>
+                    await DispatcherHelper.DispatcherAsync(() =>
                     {
                           WindowObj.WindowState = WindowState.Minimized;
                     });
@@ -81,9 +81,9 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
-                    DispatcherHelper.DispatcherAsync(WindowObj.Close);
+                    await DispatcherHelper.DispatcherAsync(WindowObj.Close);
                 });
             }
             catch (Exception)
@@ -104,7 +104,7 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
                     // Get Main Window Object.
                      dynamic DynamicMainWindowObj = ParentContentObj;
@@ -124,7 +124,7 @@ namespace TMS.Helper
                         //     DynamicMainWindowObj.ChildUserControl.Children.Add(DynamicUserControlObj);
                         // }), System.Windows.Threading.DispatcherPriority.Normal);
 
-                        DispatcherHelper.DispatcherAsync(() =>
+                        await DispatcherHelper.DispatcherAsync(() =>
                         {
                             // Clear the grid before loading user control.
                             DynamicMainWindowObj.ChildUserControl.Children.Clear();
@@ -153,7 +153,7 @@ namespace TMS.Helper
         {
             try
             {
-                return Task.Run(() =>
+                return Task.Run(async() =>
                 {
                     // Get Main Window Object.
                     dynamic DynamicMainWindowObj = ContentObj;
@@ -169,7 +169,7 @@ namespace TMS.Helper
                         //    StoreyBoardobj.Begin();
                         //}), System.Windows.Threading.DispatcherPriority.Background);
 
-                        DispatcherHelper.DispatcherAsync(() =>
+                        await DispatcherHelper.DispatcherAsync(() =>
                         {
                             // get animation storyboard resource and run the animation Asynchronously in background.
                             var StoreyBoardobj = DynamicMainWindowObj.Resources[AnimationStoreyboardResourceName] as Storyboard;

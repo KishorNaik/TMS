@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TMS.Helper;
 using TMS.ViewModel.Command;
-using TMS.ViewModel.ConcreteInterface.Process;
 using TMS.ViewModel.Factory;
 using TMS.ViewModel.ViewModelInterface;
+using TMS.PropertyChanged;
 
 
 namespace TMS.ViewModel
 {
-    public class MenuViewModel: IMenu
+    public class MenuViewModel:PropertyChangedBase, IMenu
     {
-        #region Factory Select
-
-        private ILoadSubMenu ILoadSubMenulObj =
-            ViewModelFactory.ExecuteFactory<ILoadSubMenu>(ViewModelFactory.ViewModelSelector.MenuViewModel);
-
-        #endregion
+        
 
         #region Constructor
 
@@ -31,6 +26,17 @@ namespace TMS.ViewModel
 
         #endregion
 
+        private Object _CurrentView;
+        public object CurrentView
+        {
+            get { return _CurrentView; }
+            set
+            {
+                _CurrentView = value;
+                OnPropertyChanged("CurrentView");
+            }
+        }
+
         private ICommand _LoadCreateCommand;
         public ICommand LoadCreateCommand
         {
@@ -38,16 +44,14 @@ namespace TMS.ViewModel
             {
                 return _LoadCreateCommand ?? (_LoadCreateCommand = new RelayCommand(async Param =>
                 {
-                    await DispatcherHelper.DispatcherAsync(async() =>
+                    await DispatcherHelper.DispatcherAsync(() =>
                     {
-                        // Get UcMenu User Control Obj.
-                        var UcMenuObj = Param as UCMenu;
-
-                        // Load UcMenuSubMenu Create User Control.
-                        await ILoadSubMenulObj.LoadCreateAsync(UcMenuObj);
+                        CurrentView = new CreateSubMenuViewModel();
                     });
                 }));
             }
         }
+
+       
     }
 }

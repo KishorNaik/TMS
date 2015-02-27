@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.PropertyChanged;
 
-namespace TMS.ViewModel.ConcreteInterface.Process
+namespace TMS.ViewModel
 {
-    public interface ILoadSubMenu
+    public class CreateSubMenuViewModel:PropertyChangedBase
     {
-        Task LoadCreateAsync(UCMenu UcMenuObj);
     }
 }

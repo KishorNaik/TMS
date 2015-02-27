@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TMS
+namespace TMS.View.MenuUC
 {
 	/// <summary>
 	/// Interaction logic for UCMenu.xaml
