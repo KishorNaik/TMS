@@ -54,13 +54,11 @@ namespace TMS.ViewModel
         {
             get
             {
-                return _LoadMenuCommand ??
-                       (_LoadMenuCommand = new RelayCommand(async Param => await DispatcherHelper.DispatcherAsync(
-                          () =>
-                           {
-                               // Create a instance MenuViewModel to load Menu User Control in Main window.
-                               CurrentView = new MenuViewModel();
-                           })));
+                return _LoadMenuCommand ?? (_LoadMenuCommand = new RelayCommand(Param =>
+                {
+                    // Create a instance MenuViewModel to load Menu User Control in Main window.
+                    CurrentView = new MenuViewModel();
+                }));
             }
         }
 

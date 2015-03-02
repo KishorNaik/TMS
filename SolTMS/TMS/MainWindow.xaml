@@ -80,6 +80,10 @@
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource ChildUserControlStoryboard}" />
         </EventTrigger>
+
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnMenu">
+            <BeginStoryboard Storyboard="{StaticResource ChildUserControlStoryboard}" />
+        </EventTrigger>
     </Window.Triggers>
 
     <Viewbox Stretch="Fill">
@@ -109,6 +113,7 @@
                     <ColumnDefinition Width="28*" />
                     <ColumnDefinition />
                     <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
 
@@ -121,9 +126,32 @@
                            FontWeight="Bold"
                            Foreground="#FFFFA503"
                            Text="Transport Management System" />
+
+                <Button x:Name="btnMenu"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Background="Transparent"
+                        Command="{Binding LoadMenuCommand,
+                                          Mode=OneWay,
+                                          IsAsync=True}">
+                    <Image x:Name="imgMenu"
+                           Margin="5"
+                           RenderTransformOrigin="0.5,0.5"
+                           Source="Menu.png"
+                           Stretch="Fill">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Button>
                 <Image x:Name="imgMinimize"
                        Grid.Row="0"
-                       Grid.Column="1"
+                       Grid.Column="2"
                        Margin="5"
                        BehaviorNS:MinimizeWindowBehavior.IsMinimize="True"
                        BehaviorNS:MinimizeWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window},
@@ -142,7 +170,7 @@
                 </Image>
                 <Image x:Name="imgClose"
                        Grid.Row="0"
-                       Grid.Column="2"
+                       Grid.Column="3"
                        Margin="5"
                        BehaviorNS:CloseWindowBehavior.IsClose="True"
                        BehaviorNS:CloseWindowBehavior.WindowOwner="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window},

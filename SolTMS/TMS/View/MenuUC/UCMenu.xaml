@@ -34,7 +34,7 @@
     </UserControl.Resources>
 
     <UserControl.Triggers>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnCreateMenu">
             <BeginStoryboard Storyboard="{StaticResource SubMenuStoryboard}" />
         </EventTrigger>
     </UserControl.Triggers>
@@ -54,7 +54,7 @@
                          Columns="2"
                          Rows="2">
 
-                <Button x:Name="button"
+                <Button x:Name="btnCreateMenu"
                         Command="{Binding LoadCreateCommand,
                                           IsAsync=True,
                                           Mode=OneWay}"

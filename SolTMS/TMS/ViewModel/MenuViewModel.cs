@@ -21,7 +21,7 @@ namespace TMS.ViewModel
 
         public MenuViewModel()
         {
-
+            
         }
 
         #endregion
@@ -42,12 +42,9 @@ namespace TMS.ViewModel
         {
             get
             {
-                return _LoadCreateCommand ?? (_LoadCreateCommand = new RelayCommand(async Param =>
+                return _LoadCreateCommand ?? (_LoadCreateCommand = new RelayCommand(Param =>
                 {
-                    await DispatcherHelper.DispatcherAsync(() =>
-                    {
                         CurrentView = new CreateSubMenuViewModel();
-                    });
                 }));
             }
         }
