@@ -7,13 +7,13 @@ using System.Windows.Input;
 using TMS.Helper;
 using TMS.ViewModel.Command;
 using TMS.ViewModel.Factory;
-using TMS.ViewModel.ViewModelInterface;
 using TMS.PropertyChanged;
+using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 
 
 namespace TMS.ViewModel
 {
-    public class MenuViewModel:PropertyChangedBase, IMenu
+    public class MenuViewModel:PropertyChangedBase, IMenuViewModel
     {
         
 

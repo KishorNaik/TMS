@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TMS.ViewModel.ConcreteInterface;
-using TMS.ViewModel.ViewModelInterface;
+using TMS.ViewModel.InterfaceBase;
+using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 
-namespace TMS.ViewModel.ConcreteInterface
+namespace TMS.ViewModel.InterfaceBase.ViewModelInterface
 {
-    public interface IMainWindow : IContentView
+    public interface IMainWindowViewModel : IContentView
     {
         ICommand LoadMenuCommand { get; }
     }

@@ -7,12 +7,12 @@ using System.Windows.Input;
 using TMS.Helper;
 using TMS.ViewModel.Command;
 using TMS.ViewModel.Factory;
-using TMS.ViewModel.ConcreteInterface;
+using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 using TMS.PropertyChanged;
 
 namespace TMS.ViewModel
 {
-    public class MainWindowViewModel :PropertyChangedBase, IMainWindow
+    public class MainWindowViewModel :PropertyChangedBase, IMainWindowViewModel
     {
         
         #region Constructor

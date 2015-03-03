@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace TMS.ViewModel.ViewModelInterface
+namespace TMS.ViewModel.InterfaceBase.ViewModelInterface
 {
-    public interface IMenu : IContentView
+    public interface IMenuViewModel : IContentView
     {
         #region IMenu Declaration
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMS.ViewModel.ViewModelInterface
+namespace TMS.ViewModel.InterfaceBase.ViewModelInterface
 {
     public interface IContentView
     {
