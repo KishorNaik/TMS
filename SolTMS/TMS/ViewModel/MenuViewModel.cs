@@ -27,6 +27,9 @@ namespace TMS.ViewModel
         #endregion
 
         private Object _CurrentView;
+        /// <summary>
+        /// This Property is used for to display user specific current view through Viewmodel class.
+        /// </summary>
         public object CurrentView
         {
             get { return _CurrentView; }
@@ -38,12 +41,16 @@ namespace TMS.ViewModel
         }
 
         private ICommand _LoadCreateCommand;
+        /// <summary>
+        /// This Property is used for Load Create Sub Menu View 
+        /// </summary>
         public ICommand LoadCreateCommand
         {
             get
             {
                 return _LoadCreateCommand ?? (_LoadCreateCommand = new RelayCommand(Param =>
                 {
+                        // Load Create Sub Menu View through CreateSubMenuViewModel Class.
                         CurrentView = new CreateSubMenuViewModel();
                 }));
             }

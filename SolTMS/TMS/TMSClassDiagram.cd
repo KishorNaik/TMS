@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TMS.ViewModel.Concrete.TransportConcrete" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Concrete\TransportConcrete.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TMS.ViewModel.CreateSubMenuViewModel" Collapsed="true">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\CreateSubMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TMS.ViewModel.MainWindowViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ViewModel\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TMS.ViewModel.MenuViewModel" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAADAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MenuViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TMS.ViewModel.Command.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Command\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TMS.ViewModel.Factory.ViewModelFactory" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Factory\ViewModelFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.ITransportConcrete" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ConcreteInterface\ITransportConcrete.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.Common.ICancel" Collapsed="true">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ConcreteInterface\Common\ICancel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.Common.IProcess" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ConcreteInterface\Common\IProcess.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.IMainWindowViewModel" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ViewModelInterface\IMainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.IMenuViewModel" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ViewModelInterface\IMenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.Common.IContentView" Collapsed="true">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ViewModelInterface\Common\IContentView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.UI.IEnable">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ViewModelInterface\UI\IEnable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.UI.IFocus">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\InterfaceBase\ViewModelInterface\UI\IFocus.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

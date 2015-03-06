@@ -61,15 +61,24 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\TransportModel.cs" />
     <Compile Include="ViewModel\Command\RelayCommand.cs" />
+    <Compile Include="ViewModel\Concrete\TransportConcrete.cs" />
     <Compile Include="ViewModel\CreateSubMenuViewModel.cs" />
     <Compile Include="ViewModel\Factory\ViewModelFactory.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\ICancel.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\IProcess.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\ITransportConcrete.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\ITransportViewModel.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\UI\IEnable.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\UI\IFocus.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="PropertyChanged\PropertyChangedBase.cs" />
     <Compile Include="ViewModel\MenuViewModel.cs" />
-    <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\IContentView.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\Common\IContentView.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\IMainWindowViewModel.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\IMenuViewModel.cs" />
+    <Compile Include="ViewModel\TransportViewModel.cs" />
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
     <Compile Include="View\Behavior\ImageMouseDownHelper.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
@@ -126,19 +135,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Class Diagram\TransportCD.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="TMSClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\Concrete\" />
-    <Folder Include="ViewModel\InterfaceBase\ConcreteInterface\Process\" />
     <Folder Include="View\Converter\" />
   </ItemGroup>
   <ItemGroup>
@@ -146,9 +154,9 @@
       <Project>{3f2a619c-88ca-44f2-a564-c0614d9bba0f}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IEntity\IEntity.csproj">
+    <ProjectReference Include="..\IEntity\IENTITY.csproj">
       <Project>{d66cb309-1e62-4de1-ac4e-89a93cd0a3de}</Project>
-      <Name>IEntity</Name>
+      <Name>IENTITY</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

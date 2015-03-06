@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTMS", "UnitTestTMS\UnitTestTMS.csproj", "{7578DD4B-844C-4B91-87E4-4AC4EF986ADF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IEntity", "IEntity\IEntity.csproj", "{D66CB309-1E62-4DE1-AC4E-89A93CD0A3DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IENTITY", "IEntity\IENTITY.csproj", "{D66CB309-1E62-4DE1-AC4E-89A93CD0A3DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

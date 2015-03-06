@@ -5,7 +5,6 @@
         xmlns:ViewModelNS="clr-namespace:TMS.ViewModel"
         xmlns:ViewNS="clr-namespace:TMS.View.MenuUC"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:local="clr-namespace:TMS"
         x:Name="Window"
         Title="MainWindow"
         Width="1024"
@@ -17,11 +16,14 @@
         WindowStyle="None">
     <Window.Resources>
 
+        <!--  Create a Instance of MainViewModel Class  -->
         <ViewModelNS:MainWindowViewModel x:Key="MainWindowViewModelKey" />
 
+        <!--  Bind Main Menu View  -->
         <DataTemplate DataType="{x:Type ViewModelNS:MenuViewModel}">
             <ViewNS:UCMenu />
         </DataTemplate>
+
 
         <Storyboard x:Key="OnMouseEnterMinimize">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="imgMinimize" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
@@ -92,7 +94,7 @@
               Height="680"
               DataContext="{Binding Source={StaticResource MainWindowViewModelKey},
                                     IsAsync=True}">
-
+            <!--  Open Main Menu after Main Window loaded  -->
             <i:Interaction.Triggers>
                 <i:EventTrigger>
                     <i:InvokeCommandAction Command="{Binding LoadMenuCommand, Mode=OneWay, IsAsync=True}" />
@@ -212,6 +214,7 @@
                         </TransformGroup>
                     </Grid.RenderTransform>
 
+                    <!--  Bind user specific View through ViewModel Class  -->
                     <ContentControl Content="{Binding CurrentView}" />
 
                 </Grid>

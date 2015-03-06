@@ -12,8 +12,10 @@
              mc:Ignorable="d">
 
     <UserControl.Resources>
+        <!--  Create a Instance of MenuViewModel Class  -->
         <ViewModelNS:MenuViewModel x:Key="MenuVM" />
 
+        <!--  Bind Create Sub Menu View  -->
         <DataTemplate DataType="{x:Type ViewModelNS:CreateSubMenuViewModel}">
             <ViewNS:UCSubMenuCreate />
         </DataTemplate>
@@ -96,6 +98,7 @@
                     </TransformGroup>
                 </Grid.RenderTransform>
 
+                <!--  Bind user specific View through ViewModel Class  -->
                 <ContentControl Content="{Binding CurrentView}" />
             </Grid>
         </Grid>
