@@ -9,32 +9,52 @@ namespace TMS.ViewModel.Factory
 {
     public static class ViewModelFactory
     {
+        #region Declaration
+
+        // Store type of Concrete class.
+        private static Dictionary<ConcreteSelector, Type> InstanceConcreteDic = new Dictionary<ConcreteSelector, Type>();
+
+        #endregion
+
+        #region Constructor
+
+        static ViewModelFactory()
+        {
+            // Load Concrete class Type.
+            LoadConcreteType();
+        }
+        #endregion
+
         #region Enum
 
-        public enum ViewModelSelector
+        public enum ConcreteSelector
         {
-            MenuViewModel=0
+           
         };
 
         #endregion
 
         #region Execute Factory
 
-        public static TViewModel ExecuteFactory<TViewModel>(ViewModelSelector ViewModelSelectorEnum)
+        private static void LoadConcreteType()
         {
-            TViewModel TViewModelObj = default(TViewModel);
+            throw new NotImplementedException();
+        }
 
-            switch (ViewModelSelectorEnum)
-            {
-               
+        /// <summary>
+        /// Execute factory 
+        /// </summary>
+        /// <typeparam name="TIFactory">Specify the type factory interface</typeparam>
+        /// <param name="ConcreteSelectorEnum">Specify the name of concrete </param>
+        /// <returns>Interface</returns>
+        public static TIFactory ExecuteFactory<TIFactory>(ConcreteSelector ConcreteSelectorEnum)
+        {
+            TIFactory TIFactoryObj = default(TIFactory);
 
-                case ViewModelSelector.MenuViewModel:
-                    //ILoadSubMenu ILoadChildUserControlObj = new MenuConcrete();
-                    //TViewModelObj = (TViewModel) ILoadChildUserControlObj;
-                    break;
-            }
+            // Create an instance of object bases on concrete class type which user specify the type of concrete class.
+            TIFactoryObj =(TIFactory) Activator.CreateInstance(InstanceConcreteDic[ConcreteSelectorEnum]);
 
-            return TViewModelObj;
+            return TIFactoryObj;
         }
 
         #endregion

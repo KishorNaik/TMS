@@ -34,6 +34,11 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        protected virtual Task<IEnumerable<ITransport>> GetTransportDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();

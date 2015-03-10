@@ -20,7 +20,7 @@
   <Class Name="TMS.ViewModel.Concrete.TransportConcrete">
     <Position X="2.5" Y="4.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAgAAAAAAAIAgAAAAAAAAAAIA=</HashCode>
       <FileName>ViewModel\Concrete\TransportConcrete.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -50,6 +50,23 @@
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="TMS.ViewModel.Factory.ViewModelFactory">
+    <Position X="8.75" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TMS.ViewModel.Factory.ViewModelFactory.ConcreteSelector" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewModel\Factory\ViewModelFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Factory\ViewModelFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="IEntity.ITransport">
     <Position X="4.5" Y="2.25" Width="1.5" />
     <TypeIdentifier />
@@ -57,14 +74,14 @@
   <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.ITransportConcrete">
     <Position X="2.25" Y="2.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\InterfaceBase\ConcreteInterface\ITransportConcrete.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.Common.IProcess">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAAAAIA=</HashCode>
       <FileName>ViewModel\InterfaceBase\ConcreteInterface\Common\IProcess.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -76,7 +93,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="TMS.ViewModel.InterfaceBase.ViewModelInterface.ITransportViewModel">
-    <Position X="9.25" Y="2.25" Width="1.75" />
+    <Position X="9.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAA=</HashCode>
       <FileName>ViewModel\InterfaceBase\ViewModelInterface\ITransportViewModel.cs</FileName>
