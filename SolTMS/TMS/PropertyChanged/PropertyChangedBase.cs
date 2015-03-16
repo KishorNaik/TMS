@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace TMS.PropertyChanged
 {
-    public class PropertyChangedBase:INotifyPropertyChanged
+    public abstract class PropertyChangedBase:INotifyPropertyChanged
     {
         #region Implement INotifyProeprty Changed
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(String PropertyName)
+        protected virtual void OnPropertyChanged(String PropertyName)
         {
             if (PropertyChanged != null)
             {

@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace TMS.ViewModel.InterfaceBase.ConcreteInterface.Common
 {
-    public interface IProcess
+    public interface IDelete
     {
-        Task InsertUpdateAsync<TModel,TViewModel>(TModel TModelObj,TViewModel TViewModelObj);
-
-        Task EditAsync<TModel, TViewModel>(TModel TModelObj, TViewModel TViewModelObj);
-
         Task DeleteAsync<TModel, TViewModel>(TModel TModelObj, TViewModel TViewModelObj);
-
     }
 }

@@ -8,7 +8,7 @@ using TMS.Model;
 using TMS.PropertyChanged;
 using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 
-namespace TMS.ViewModel
+namespace TMS.ViewModel.Module.Transport
 {
     public class TransportViewModel :PropertyChangedBase, ITransportViewModel
     {

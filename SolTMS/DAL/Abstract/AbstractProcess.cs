@@ -10,11 +10,11 @@ namespace DAL.Abstract
     {
         #region Abstract Methods
 
-        protected abstract Task<String> InsertAsync<TEntity>(TEntity TEntityObj);
+        protected abstract Task<String> InsertAsync<TEntity>(TEntity tEntityObj);
 
-        protected abstract Task<String> UpdateAsync<TEntity>(TEntity TEntityObj);
+        protected abstract Task<String> UpdateAsync<TEntity>(TEntity tEntityObj);
 
-        protected abstract Task<String> DeleteAsync(int ? Id);
+        protected abstract Task<String> DeleteAsync(int ? id);
 
         #endregion
     }

@@ -12,13 +12,13 @@ namespace TMS.Helper
     {
         #region Method
 
-        public static Task DispatcherAsync(Action ActionObj)
+        public static Task DispatcherAsync(Action actionObj)
         {
             try
             {
                 return Task.Run(() =>
                 {
-                    Application.Current.Dispatcher.InvokeAsync(ActionObj,
+                    Application.Current.Dispatcher.InvokeAsync(actionObj,
                         System.Windows.Threading.DispatcherPriority.Normal);
                 });
             }
@@ -29,16 +29,16 @@ namespace TMS.Helper
         }
 
 
-        public static Task<TResult> DispatcherAsync<TResult>(Func<TResult> FuncObj)
+        public static Task<TResult> DispatcherAsync<TResult>(Func<TResult> funcObj)
         {
-            DispatcherOperation<TResult> TResultObj;
+            DispatcherOperation<TResult> tResultObj;
             return Task.Run<TResult>(async () =>
             {
 
-                TResultObj = Application.Current.Dispatcher.InvokeAsync<TResult>((FuncObj),
+                tResultObj = Application.Current.Dispatcher.InvokeAsync<TResult>((funcObj),
                     System.Windows.Threading.DispatcherPriority.Normal);
 
-                return await TResultObj;
+                return await tResultObj;
             });
         }
 

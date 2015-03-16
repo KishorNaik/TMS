@@ -19,7 +19,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -56,7 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\DelegateHelper.cs" />
     <Compile Include="Helper\DispatcherHelper.cs" />
+    <Compile Include="Helper\ExceptionHelper.cs" />
+    <Compile Include="Helper\MessengerHelper.cs" />
     <Compile Include="Helper\WindowHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -67,7 +70,9 @@
     <Compile Include="ViewModel\CreateSubMenuViewModel.cs" />
     <Compile Include="ViewModel\Factory\ViewModelFactory.cs" />
     <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\ICancel.cs" />
-    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\IProcess.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\IDelete.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\IEdit.cs" />
+    <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\IInsert.cs" />
     <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\ITransportConcrete.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\ITransportViewModel.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\UI\IEnable.cs" />
@@ -78,7 +83,7 @@
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\Common\IContentView.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\IMainWindowViewModel.cs" />
     <Compile Include="ViewModel\InterfaceBase\ViewModelInterface\IMenuViewModel.cs" />
-    <Compile Include="ViewModel\TransportViewModel.cs" />
+    <Compile Include="ViewModel\Module\Transport\TransportViewModel.cs" />
     <Compile Include="View\Behavior\CloseWindowBehavior.cs" />
     <Compile Include="View\Behavior\ImageMouseDownHelper.cs" />
     <Compile Include="View\Behavior\MinimizeWindowBehavior.cs" />
@@ -147,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\Converter\" />
+    <Folder Include="View\Module\Transport\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

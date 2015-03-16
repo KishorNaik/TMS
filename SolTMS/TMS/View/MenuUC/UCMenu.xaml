@@ -20,6 +20,16 @@
             <ViewNS:UCSubMenuCreate />
         </DataTemplate>
 
+        <!--  Bind Search Sub Menu View  -->
+
+
+        <!--  Bind Stats Sub Menu View  -->
+
+
+        <!--  Bind Report Sub Menu View  -->
+
+
+
         <Storyboard x:Key="SubMenuStoryboard">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ChildUserControl" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
                 <EasingDoubleKeyFrame KeyTime="0" Value="530" />

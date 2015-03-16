@@ -10,11 +10,11 @@ namespace DAL
 {
     public class TransportDal : AbstractProcess,IDisposable
     {
-        protected override Task<string> InsertAsync<TEntity>(TEntity TEntityObj)
+        protected override Task<string> InsertAsync<TEntity>(TEntity tEntityObj)
         {
             try
             {
-                ITransport ITransport = TEntityObj as ITransport;
+                ITransport ITransport = tEntityObj as ITransport;
                 throw new NotImplementedException();
 
             }
@@ -24,7 +24,7 @@ namespace DAL
             }
         }
 
-        protected override Task<string> UpdateAsync<TEntity>(TEntity TEntityObj)
+        protected override Task<string> UpdateAsync<TEntity>(TEntity tEntityObj)
         {
             throw new NotImplementedException();
         }

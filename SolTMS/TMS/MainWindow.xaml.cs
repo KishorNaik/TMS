@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TMS.Helper;
 
 namespace TMS
 {
@@ -22,6 +23,7 @@ namespace TMS
 			this.InitializeComponent();
 			
 			// Insert code required on object creation below this point.
+
 		}
 	}
 }

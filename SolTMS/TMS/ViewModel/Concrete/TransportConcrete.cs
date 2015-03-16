@@ -12,16 +12,16 @@ namespace TMS.ViewModel.Concrete
 {
     public sealed class TransportConcrete : TransportDal, ITransportConcrete
     {
-        public Task InsertUpdateAsync<TModel, TViewModel>(TModel TModelObj, TViewModel TViewModelObj)
+        public new Task<List<ITransport>> GetTransportDataAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task CancelAsync<TModel, TUi>(TModel TModelObj, TUi TUiObj)
+        public Task InsertAsync<TModel, TViewModel>(TModel TModelObj, TViewModel TViewModelObj)
         {
+            
             throw new NotImplementedException();
         }
-
 
         public Task EditAsync<TModel, TViewModel>(TModel TModelObj, TViewModel TViewModelObj)
         {
@@ -33,7 +33,7 @@ namespace TMS.ViewModel.Concrete
             throw new NotImplementedException();
         }
 
-        public new Task<List<ITransport>> GetTransportDataAsync()
+        public Task CancelAsync<TModel, TUi>(TModel TModelObj, TUi TUiObj)
         {
             throw new NotImplementedException();
         }

@@ -9,5 +9,6 @@ namespace TMS.ViewModel
 {
     public class CreateSubMenuViewModel:PropertyChangedBase
     {
+
     }
 }
