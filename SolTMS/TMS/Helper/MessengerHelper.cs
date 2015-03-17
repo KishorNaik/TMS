@@ -16,33 +16,33 @@ namespace TMS.Helper
 
         #region Methods
 
-        public async static Task Send<TMessage>(String key, TMessage tMessageObj)
+        public async static Task SendAsync<TMessage>(String key, TMessage tMessageObj)
         {
             await Task.Run(async() =>
             {
-                if (await Find(key) == false)
+                if (await FindAsync(key) == false)
                 {
                     dictioneryMessageObj.Add(key, tMessageObj);
                 }
             });
         }
 
-        public static Task<TMessage> Receive<TMessage>(String key)
+        public static Task<TMessage> ReceiveAsync<TMessage>(String key)
         {
             return Task.Run(() => (TMessage)dictioneryMessageObj[key]);
         }
 
-        public static Task Clear(String key)
+        public static Task<Boolean> RemoveAsync(String key)
         {
             return Task.Run(() =>dictioneryMessageObj.Remove(key) );
         }
 
-        public static Task Clear()
+        public static Task ClearAsync()
         {
             return Task.Run(() => dictioneryMessageObj.Clear());
         }
 
-        private static Task<Boolean> Find(String key)
+        private static Task<Boolean> FindAsync(String key)
         {
             return Task.Run(() => dictioneryMessageObj.ContainsKey(key));
         }

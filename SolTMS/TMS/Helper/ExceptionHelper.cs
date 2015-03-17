@@ -10,7 +10,7 @@ namespace TMS.Helper
     {
         #region Methods
 
-        public static Task ExceptionHandling(Action tryBlock, Action catchBlock,Action finallyBlock=null)
+        public static Task ExceptionHandlingAsync(Action tryBlock, Action catchBlock,Action finallyBlock=null)
         {
             return Task.Run(() =>
             {
@@ -29,7 +29,7 @@ namespace TMS.Helper
             });
         }
 
-        public static Task ExceptionHandling(Action tryBlock, Action<Exception> catchBlock, Action finallyBlock = null)
+        public static Task ExceptionHandlingAsync(Action tryBlock, Action<Exception> catchBlock, Action finallyBlock = null)
         {
             return Task.Run(() =>
             {
@@ -49,7 +49,7 @@ namespace TMS.Helper
         }
 
 
-        public static Task<TReturnType> ExceptionHandling<TReturnType>(Func<TReturnType> tryBlock, Action catchBlock, Action finallyBlock = null)
+        public static Task<TReturnType> ExceptionHandlingAsync<TReturnType>(Func<TReturnType> tryBlock, Action catchBlock, Action finallyBlock = null)
         {
             return Task.Run(() =>
             {
@@ -71,7 +71,7 @@ namespace TMS.Helper
             
         }
 
-        public static Task<TReturnType> ExceptionHandling<TReturnType>(Func<TReturnType> tryBlock, Action<Exception> catchBlock, Action finallyBlock = null)
+        public static Task<TReturnType> ExceptionHandlingAsync<TReturnType>(Func<TReturnType> tryBlock, Action<Exception> catchBlock, Action finallyBlock = null)
         {
             return Task.Run(() =>
             {

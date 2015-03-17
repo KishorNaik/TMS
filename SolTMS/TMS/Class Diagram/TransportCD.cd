@@ -39,12 +39,9 @@
   <Class Name="TMS.ViewModel.Module.Transport.TransportViewModel">
     <Position X="15" Y="2.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ICAAAAAAAAAAAAACAAAACAAAAAAAAAAAACAAAQAQAAA=</HashCode>
+      <HashCode>ACAAAAAAAAAAAAACAAAACAAAAAAAAAAAACCAAQAQAAA=</HashCode>
       <FileName>ViewModel\Module\Transport\TransportViewModel.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="SelectTransportModel" />
-    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="TransportData" />
     </ShowAsCollectionAssociation>

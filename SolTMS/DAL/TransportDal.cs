@@ -14,7 +14,7 @@ namespace DAL
         {
             try
             {
-                ITransport ITransport = tEntityObj as ITransport;
+                ITransport iTransport = tEntityObj as ITransport;
                 throw new NotImplementedException();
 
             }
@@ -41,7 +41,7 @@ namespace DAL
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
         }
     }
 }

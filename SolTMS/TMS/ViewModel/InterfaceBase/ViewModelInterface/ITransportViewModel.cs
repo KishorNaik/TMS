@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IEntity;
 using TMS.Model;
 using TMS.ViewModel.InterfaceBase.ViewModelInterface.UI;
 

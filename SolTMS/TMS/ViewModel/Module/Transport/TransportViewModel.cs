@@ -17,6 +17,7 @@ namespace TMS.ViewModel.Module.Transport
 
         public TransportViewModel()
         {
+            if(SelectTransportModel==null)
             SelectTransportModel = new TransportModel(this);
         }
 
@@ -24,13 +25,13 @@ namespace TMS.ViewModel.Module.Transport
 
         #region Business Properties
 
-        private TransportModel _SelecteTransportModel;
+        private TransportModel _SelectTransportModel;
         public TransportModel SelectTransportModel
         {
-            get { return _SelecteTransportModel; }
+            get { return _SelectTransportModel; }
             set
             {
-                _SelecteTransportModel = value;
+                _SelectTransportModel = value;
                 OnPropertyChanged("SelectTransportModel");
             }
         }
