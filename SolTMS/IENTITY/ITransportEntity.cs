@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IEntity
 {
-    public interface ITransport
+    public interface ITransportEntity
     {
         int ? TransportId { get; set; }
 

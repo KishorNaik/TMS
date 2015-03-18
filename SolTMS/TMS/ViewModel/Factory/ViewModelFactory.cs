@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
+using TMS.ViewModel.Concrete.Module.Transport;
 using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 
 namespace TMS.ViewModel.Factory
@@ -11,8 +13,8 @@ namespace TMS.ViewModel.Factory
     {
         #region Declaration
 
-        // Store type of Concrete class.
-        private static Dictionary<ConcreteSelector, Type> InstanceConcreteDic = new Dictionary<ConcreteSelector, Type>();
+        // In tuple Object specify the type of Concrete class and Dal class to invoke object dynamically.
+        private static Dictionary<ConcreteSelector,Tuple<Type,Type>> instanceConcreteDic = new Dictionary<ConcreteSelector,Tuple<Type,Type>>();
 
         #endregion
 
@@ -29,7 +31,7 @@ namespace TMS.ViewModel.Factory
 
         public enum ConcreteSelector
         {
-           
+           Transport=0
         };
 
         #endregion
@@ -38,7 +40,8 @@ namespace TMS.ViewModel.Factory
 
         private static void LoadConcreteType()
         {
-            throw new NotImplementedException();
+            instanceConcreteDic.Add(ConcreteSelector.Transport,new Tuple<Type,Type>(typeof(TransportConcrete),typeof(TransportDal)));
+           
         }
 
         /// <summary>
@@ -51,8 +54,17 @@ namespace TMS.ViewModel.Factory
         {
             TIFactory TIFactoryObj = default(TIFactory);
 
-            // Create an instance of object bases on concrete class type which user specify the type of concrete class.
-            TIFactoryObj =(TIFactory) Activator.CreateInstance(InstanceConcreteDic[ConcreteSelectorEnum]);
+            // Get class types based on Concrete selector.
+            var tupleObj = instanceConcreteDic[ConcreteSelectorEnum];
+
+            // Get concrete class type from tuple object.
+            var typeofConcrete = tupleObj.Item1;
+
+            // Get repository class from tuple object.
+            var typeofDal = tupleObj.Item2;
+
+            // Create an instance of Concrete class dynamically and create an instance of repository class object in concrete class constructor dynamically
+            TIFactoryObj = (TIFactory) Activator.CreateInstance(typeofConcrete,Activator.CreateInstance(typeofDal));
 
             return TIFactoryObj;
         }

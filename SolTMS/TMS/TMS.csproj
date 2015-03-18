@@ -66,7 +66,8 @@
     </Compile>
     <Compile Include="Model\TransportModel.cs" />
     <Compile Include="ViewModel\Command\RelayCommand.cs" />
-    <Compile Include="ViewModel\Concrete\TransportConcrete.cs" />
+    <Compile Include="ViewModel\Concrete\Module\Transport\TransportConcrete.Collection.cs" />
+    <Compile Include="ViewModel\Concrete\Module\Transport\TransportConcrete.cs" />
     <Compile Include="ViewModel\CreateSubMenuViewModel.cs" />
     <Compile Include="ViewModel\Factory\ViewModelFactory.cs" />
     <Compile Include="ViewModel\InterfaceBase\ConcreteInterface\Common\ICancel.cs" />

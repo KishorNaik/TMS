@@ -8,8 +8,8 @@ using TMS.ViewModel.InterfaceBase.ConcreteInterface.Common;
 
 namespace TMS.ViewModel.InterfaceBase.ConcreteInterface
 {
-    interface ITransportConcrete : IInsert,IEdit,IDelete,ICancel
+    public interface ITransportConcrete : IInsert,IEdit,IDelete,ICancel
     {
-        Task<List<ITransport>> GetTransportDataAsync();
+        Task<List<ITransportEntity>> GetTransportDataAsync();
     }
 }

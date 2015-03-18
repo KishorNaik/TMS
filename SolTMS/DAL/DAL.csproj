@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\AbstractProcess.cs" />
+    <Compile Include="RepositoryInterface\ITransportDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryInterface\Common\IRepository.cs" />
+    <Compile Include="RepositoryInterface\Common\IRepositoryData.cs" />
     <Compile Include="TransportDal.cs" />
   </ItemGroup>
   <ItemGroup>

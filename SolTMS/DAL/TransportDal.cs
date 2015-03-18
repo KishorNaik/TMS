@@ -3,45 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Abstract;
-using IEntity;
+using DAL.RepositoryInterface;
 
 namespace DAL
 {
-    public class TransportDal : AbstractProcess,IDisposable
+    public class TransportDal : ITransportDal
     {
-        protected override Task<string> InsertAsync<TEntity>(TEntity tEntityObj)
-        {
-            try
-            {
-                ITransport iTransport = tEntityObj as ITransport;
-                throw new NotImplementedException();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        protected override Task<string> UpdateAsync<TEntity>(TEntity tEntityObj)
+      
+        public Task<string> InsertAsync<TEntity>(TEntity tEntityObj)
         {
             throw new NotImplementedException();
         }
 
-        protected override Task<string> DeleteAsync(int?  Id)
+        public Task<string> UpdateAsync<TEntity>(TEntity tEntityObj)
         {
             throw new NotImplementedException();
         }
 
-        protected virtual Task<IEnumerable<ITransport>> GetTransportDataAsync()
+        public Task<string> DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Dispose()
+        public Task<IEnumerable<dynamic>> GetDataAsync()
         {
-            GC.SuppressFinalize(this);
+            throw new NotImplementedException();
         }
     }
 }

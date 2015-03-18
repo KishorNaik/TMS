@@ -9,7 +9,7 @@ using TMS.ViewModel.InterfaceBase.ViewModelInterface;
 
 namespace TMS.Model
 {
-    public class TransportModel:PropertyChangedBase,ITransport
+    public class TransportModel:PropertyChangedBase,ITransportEntity
     {
 
         #region Constructor
