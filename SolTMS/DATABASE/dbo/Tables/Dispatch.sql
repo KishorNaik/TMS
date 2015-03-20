@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Dispatch] (
+﻿	CREATE TABLE [dbo].[Dispatch] (
     [DispatchID]   BIGINT        IDENTITY (1, 1) NOT NULL,
     [DispatchNo]   BIGINT        NOT NULL,
     [Year]         NVARCHAR (50) NULL,
