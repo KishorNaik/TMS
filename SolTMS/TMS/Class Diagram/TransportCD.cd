@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DAL.TransportDal">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -14,11 +14,28 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TMS.ViewModel.Concrete.Module.Transport.TransportConcrete">
-    <Position X="2.5" Y="4.25" Width="2" />
+    <Position X="3.75" Y="4.5" Width="2" />
+    <AssociationLine Name="TransportDalObj" Type="DAL.RepositoryInterface.ITransportDal" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="6.226" />
+        <Point X="2.25" Y="6.226" />
+        <Point X="2.25" Y="5" />
+        <Point X="2.677" Y="5" />
+        <Point X="2.677" Y="4.377" />
+        <Point X="0.812" Y="4.377" />
+        <Point X="0.812" Y="4.07" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-2.784" Y="1.881" Height="0.182" Width="1.288" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EAAAAAAACAAAAAAAAACAgAAAAAAAAAgAAAAAAAAAAIA=</HashCode>
-      <FileName>ViewModel\Concrete\Module\Transport\TransportConcrete.cs</FileName>
+      <HashCode>EAAAEAAACAAAAAAAAACAgAAAAAAAAAgAAAAAAAAAAIA=</HashCode>
+      <FileName>ViewModel\Concrete\Module\Transport\TransportConcrete.Collection.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TransportDalObj" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TMS.Model.TransportModel">
@@ -56,16 +73,12 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAEAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAABBAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\Factory\ViewModelFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="IEntity.ITransport">
-    <Position X="7.25" Y="2.25" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
   <Interface Name="TMS.ViewModel.InterfaceBase.ConcreteInterface.ITransportConcrete">
-    <Position X="3.75" Y="2.25" Width="2" />
+    <Position X="4.25" Y="2.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\InterfaceBase\ConcreteInterface\ITransportConcrete.cs</FileName>
@@ -119,6 +132,29 @@
       <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\InterfaceBase\ConcreteInterface\Common\IInsert.cs</FileName>
     </TypeIdentifier>
+  </Interface>
+  <Interface Name="IEntity.ITransportEntity">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="DAL.RepositoryInterface.ITransportDal" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="DAL.RepositoryInterface.Common.IRepositoryData" ManuallyRouted="true">
+      <Path>
+        <Point X="2.75" Y="3.103" />
+        <Point X="2.75" Y="3.66" />
+        <Point X="2" Y="3.66" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="DAL.RepositoryInterface.Common.IRepository">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="DAL.RepositoryInterface.Common.IRepositoryData">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
