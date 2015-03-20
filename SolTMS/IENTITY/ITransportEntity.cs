@@ -8,7 +8,7 @@ namespace IEntity
 {
     public interface ITransportEntity
     {
-        int ? TransportId { get; set; }
+        int? TransportId { get; set; }
 
         String TransportName { get; set; }
 

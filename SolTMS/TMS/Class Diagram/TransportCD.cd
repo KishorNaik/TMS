@@ -66,7 +66,7 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="TMS.ViewModel.Factory.ViewModelFactory.ConcreteSelector" Collapsed="true">
+      <Enum Name="TMS.ViewModel.Factory.ViewModelFactory.ConcreteSelector">
         <TypeIdentifier>
           <NewMemberFileName>ViewModel\Factory\ViewModelFactory.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -133,10 +133,6 @@
       <FileName>ViewModel\InterfaceBase\ConcreteInterface\Common\IInsert.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="IEntity.ITransportEntity">
-    <Position X="6.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
   <Interface Name="DAL.RepositoryInterface.ITransportDal" Collapsed="true">
     <Position X="0.5" Y="3.25" Width="1.5" />
     <InheritanceLine Type="DAL.RepositoryInterface.Common.IRepositoryData" ManuallyRouted="true">
@@ -154,6 +150,10 @@
   </Interface>
   <Interface Name="DAL.RepositoryInterface.Common.IRepositoryData">
     <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="IEntity.ITransportEntity">
+    <Position X="7.25" Y="2.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />
