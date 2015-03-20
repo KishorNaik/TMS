@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IEntity;
+using IENTITY;
 using TMS.ViewModel.InterfaceBase.ConcreteInterface.Common;
 
 namespace TMS.ViewModel.InterfaceBase.ConcreteInterface

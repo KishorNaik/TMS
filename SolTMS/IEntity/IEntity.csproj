@@ -7,7 +7,7 @@
     <ProjectGuid>{D66CB309-1E62-4DE1-AC4E-89A93CD0A3DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IEntity</RootNamespace>
+    <RootNamespace>IENTITY</RootNamespace>
     <AssemblyName>IEntity</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

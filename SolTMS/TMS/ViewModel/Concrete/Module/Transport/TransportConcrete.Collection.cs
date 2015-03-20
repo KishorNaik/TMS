@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IEntity;
+using IENTITY;
 using DAL;
 using TMS.ViewModel.InterfaceBase.ConcreteInterface;
 using TMS.ViewModel.InterfaceBase.ConcreteInterface.Common;
