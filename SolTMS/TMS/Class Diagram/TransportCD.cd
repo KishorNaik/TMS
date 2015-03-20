@@ -152,9 +152,5 @@
     <Position X="2" Y="2" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="IEntity.ITransportEntity">
-    <Position X="7.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

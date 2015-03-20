@@ -47,13 +47,13 @@
     <Compile Include="TransportDal.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IEntity\IENTITY.csproj">
-      <Project>{d66cb309-1e62-4de1-ac4e-89a93cd0a3de}</Project>
-      <Name>IENTITY</Name>
-    </ProjectReference>
+    <Folder Include="ORMD\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ORMD\" />
+    <ProjectReference Include="..\IENTITY\IENTITY.csproj">
+      <Project>{8b03b406-4390-42c4-b6c0-ba631b8f1beb}</Project>
+      <Name>IENTITY</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

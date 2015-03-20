@@ -160,8 +160,8 @@
       <Project>{3f2a619c-88ca-44f2-a564-c0614d9bba0f}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IEntity\IENTITY.csproj">
-      <Project>{d66cb309-1e62-4de1-ac4e-89a93cd0a3de}</Project>
+    <ProjectReference Include="..\IENTITY\IENTITY.csproj">
+      <Project>{8b03b406-4390-42c4-b6c0-ba631b8f1beb}</Project>
       <Name>IENTITY</Name>
     </ProjectReference>
   </ItemGroup>
